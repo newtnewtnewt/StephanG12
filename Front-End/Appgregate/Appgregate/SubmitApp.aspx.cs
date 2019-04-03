@@ -16,8 +16,7 @@ namespace Appgregate
         }
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-          /**
-          SqlConnection con = new SqlConnection();
+          SqlConnection con = new SqlConnection(@"Data Source=MSSQL1;Initial Catalog=AppTable;");
           {
             con.Open();
             SqlCommand cmd = new SqlCommand("insert into tbllogin values(@N, @Des, @Org, @Plt, @Ver, @R)",con);
@@ -37,7 +36,6 @@ namespace Appgregate
             Rating.Text = "";
             Name.Focus();
           }
-          **/
             //Write SQL storage query right here, check for validations, show something on the Webpage if necessary
         }
     }
