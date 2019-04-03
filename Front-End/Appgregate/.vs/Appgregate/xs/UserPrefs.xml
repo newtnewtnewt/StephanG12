@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{2EF7C088-E707-4342-AB27-B341B5D19C7C}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Appgregate/SubmitApp.aspx.cs">
+    <Files>
+      <File FileName="Appgregate/SubmitApp.aspx.cs" Line="19" Column="11" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Appgregate PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

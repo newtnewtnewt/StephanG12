@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Diagnostics;
+using System.Data.SqlClient;
+
 
 namespace Appgregate
 {
@@ -16,7 +18,7 @@ namespace Appgregate
         }
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-          SqlConnection con = new SqlConnection(@"Data Source=MSSQL1;Initial Catalog=AppTable;");
+          using(SqlConnection con = new SqlConnection(@"Data Source=MSSQL1;Initial Catalog=AppTable;"))
           {
             con.Open();
             SqlCommand cmd = new SqlCommand("insert into tbllogin values(@N, @Des, @Org, @Plt, @Ver, @R)",con);
