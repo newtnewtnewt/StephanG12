@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Diagnostics;
+using System.Data.SqlClient;
+using System.Web.Configuration;
 
 namespace Appgregate
 {
@@ -16,17 +18,20 @@ namespace Appgregate
         }
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-          /**
-          SqlConnection con = new SqlConnection();
+
+            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
           {
             con.Open();
-            SqlCommand cmd = new SqlCommand("insert into tbllogin values(@N, @Des, @Org, @Plt, @Ver, @R)",con);
+            SqlCommand cmd = new SqlCommand("INSERT INTO AppTable values(@N, @Des, @Org, @Plt, @Ver, @R, @com)",con);
             cmd.Parameters.AddWithValue("N",Name.Text);
             cmd.Parameters.AddWithValue("Des",Description.Text);
             cmd.Parameters.AddWithValue("Org",Organization.Text);
             cmd.Parameters.AddWithValue("Plt",Platform.Text);
             cmd.Parameters.AddWithValue("Ver",Version.Text);
-            cmd.Parameters.AddWithValue("R",Rating.Text);
+                int rating;
+                int.TryParse(Rating.Text, out rating);
+            cmd.Parameters.AddWithValue("R",rating);
+            cmd.Parameters.AddWithValue("com", "View Comments");
             cmd.ExecuteNonQuery();
 
             Name.Text = "";
@@ -36,8 +41,9 @@ namespace Appgregate
             Version.Text = "";
             Rating.Text = "";
             Name.Focus();
+            con.Close();
           }
-          **/
+          
             //Write SQL storage query right here, check for validations, show something on the Webpage if necessary
         }
     }
