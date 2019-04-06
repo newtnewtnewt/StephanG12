@@ -22,16 +22,15 @@ namespace Appgregate
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
           {
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO AppTable values(@N, @Des, @Org, @Plt, @Ver, @R, @com)",con);
+            SqlCommand cmd = new SqlCommand("INSERT INTO AppRequests values(@N, @Des, @Org, @Plt, @Ver)",con);
             cmd.Parameters.AddWithValue("N",Name.Text);
             cmd.Parameters.AddWithValue("Des",Description.Text);
             cmd.Parameters.AddWithValue("Org",Organization.Text);
             cmd.Parameters.AddWithValue("Plt",Platform.Text);
             cmd.Parameters.AddWithValue("Ver",Version.Text);
-                int rating;
-                int.TryParse(Rating.Text, out rating);
-            cmd.Parameters.AddWithValue("R",rating);
-            cmd.Parameters.AddWithValue("com", "View Comments");
+            //    int rating;
+            //    int.TryParse(Rating.Text, out rating);
+            //cmd.Parameters.AddWithValue("R",5);
             cmd.ExecuteNonQuery();
 
             Name.Text = "";
@@ -39,7 +38,7 @@ namespace Appgregate
             Organization.Text = "";
             Platform.Text = "";
             Version.Text = "";
-            Rating.Text = "";
+            //Rating.Text = "";
             Name.Focus();
             con.Close();
           }

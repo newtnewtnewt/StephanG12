@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Appgregate" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SubmitApp.aspx.cs" Inherits="Appgregate.SubmitApp"%>
+﻿<%@ Page Title="Submit App" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SubmitApp.aspx.cs" Inherits="Appgregate.SubmitApp"%>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <%-- 
@@ -29,10 +29,10 @@
     <p> Version(s)</p>
     <asp:TextBox ID="Version" runat="server" ReadOnly="False" Width="175px" ></asp:TextBox>
     <br />
-    <br />
+<%--<br />
     <p> Rating</p>
     <asp:TextBox ID="Rating" runat="server" ReadOnly="False" Width="175px" ></asp:TextBox>
-    <br />
+    <br />--%>
     <br />
     <%-- This button's action is defined under SubmitApp.aspx.cs, the SQL functionality needs fleshed out --%>
     <asp:Button ID="SubmitButton" runat="server" Text="Submit"  OnClick="SubmitButton_Click" />  

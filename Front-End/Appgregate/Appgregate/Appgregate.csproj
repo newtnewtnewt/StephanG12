@@ -193,6 +193,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <Content Include="SubmitApp.aspx" />
+    <Content Include="ModerateApps.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -363,6 +364,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="MyModule1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -392,6 +394,13 @@
     </Compile>
     <Compile Include="SubmitApp.aspx.designer.cs">
       <DependentUpon>SubmitApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModerateApps.aspx.cs">
+      <DependentUpon>ModerateApps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModerateApps.aspx.designer.cs">
+      <DependentUpon>ModerateApps.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
