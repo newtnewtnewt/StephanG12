@@ -10,7 +10,7 @@
     <br />
     <br />
 
-    <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="appID" DataSourceID="SqlDataSource1" OnRowCommand ="GridView1_RowCommand" >
         <Columns>
         <%-- Our Gridview accounts for Name, Description, Organization, Platform, Versions, Rating, and Comments.Th
              All data and headers are centered, and space is provided appropriately for the content of each column.
@@ -22,16 +22,11 @@
          <asp:BoundField DataField="Version(s)" HeaderStyle-CssClass="text-center"  ItemStyle-HorizontalAlign="Center" HeaderText="Version(s)" ItemStyle-Width="15%" SortExpression="Version(s)" ></asp:BoundField>
          <asp:BoundField DataField="Rating"     HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center" HeaderText="Rating" ItemStyle-Width="10%" SortExpression="Rating" ></asp:BoundField>
          <asp:TemplateField HeaderText="Comments"  HeaderStyle-CssClass="text-center"  ItemStyle-HorizontalAlign="Center" ItemStyle-Width="30%" SortExpression="View Comments">
-                <EditItemTemplate>
-                    <%-- TO-DO This will be added later to display the comments on each page. --%>
-                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("[View Comments]") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("[View Comments]") %>'></asp:Label>
-                </ItemTemplate>
+                 <ItemTemplate>
+                      <asp:LinkButton ID="ViewCommentsButton" CssClass = "Button"  runat="server"   Text="View Comments"  OnClick="ViewComments_Click" CommandArgument= "<%# Container.DataItemIndex %>" CommandName ="Remove"  />
+                 </ItemTemplate>
 
                 <ItemStyle HorizontalAlign="Center" Width="20%"></ItemStyle>
-                
                 </asp:TemplateField>
        </Columns>
 

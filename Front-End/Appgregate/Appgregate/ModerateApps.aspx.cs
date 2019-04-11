@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Web.Configuration;
 using System.Diagnostics;
 
+
 namespace Appgregate
 {
     public partial class ModerateApps : System.Web.UI.Page
@@ -38,11 +39,12 @@ namespace Appgregate
 
 
                     SqlCommand cmd = new SqlCommand("INSERT INTO AppTable values(@N, @Des, @Org, @Plt, @Ver, @R, @com)", con);
-                    cmd.Parameters.AddWithValue("N", row.Cells[0].Text);
-                    cmd.Parameters.AddWithValue("Des", row.Cells[1].Text);
-                    cmd.Parameters.AddWithValue("Org", row.Cells[2].Text);
-                    cmd.Parameters.AddWithValue("Plt", row.Cells[3].Text);
-                    cmd.Parameters.AddWithValue("Ver", row.Cells[4].Text);
+                    Debug.Print(row.Cells[0].Text);
+                    cmd.Parameters.AddWithValue("N", System.Web.HttpUtility.HtmlDecode(row.Cells[0].Text));
+                    cmd.Parameters.AddWithValue("Des", System.Web.HttpUtility.HtmlDecode(row.Cells[1].Text));
+                    cmd.Parameters.AddWithValue("Org", System.Web.HttpUtility.HtmlDecode(row.Cells[2].Text));
+                    cmd.Parameters.AddWithValue("Plt", System.Web.HttpUtility.HtmlDecode(row.Cells[3].Text));
+                    cmd.Parameters.AddWithValue("Ver", System.Web.HttpUtility.HtmlDecode(row.Cells[4].Text));
                     //    int rating;
                     //    int.TryParse(Rating.Text, out rating);
                     cmd.Parameters.AddWithValue("R", 5);
@@ -53,11 +55,11 @@ namespace Appgregate
                 SqlCommand cmd2 = new SqlCommand("DELETE FROM AppRequests WHERE name = @N AND Description = @Des" +
                    " AND Organization = @Org", con);
                   // "AND Platform(s) = @Plt and Version(s) = @Ver)", con);
-                cmd2.Parameters.AddWithValue("N", row.Cells[0].Text);
-                cmd2.Parameters.AddWithValue("Des", row.Cells[1].Text);
-                cmd2.Parameters.AddWithValue("Org", row.Cells[2].Text);
-                cmd2.Parameters.AddWithValue("Plt", row.Cells[3].Text);
-                cmd2.Parameters.AddWithValue("Ver", row.Cells[4].Text);
+                cmd2.Parameters.AddWithValue("N", System.Web.HttpUtility.HtmlDecode(row.Cells[0].Text));
+                cmd2.Parameters.AddWithValue("Des", System.Web.HttpUtility.HtmlDecode(row.Cells[1].Text));
+                cmd2.Parameters.AddWithValue("Org", System.Web.HttpUtility.HtmlDecode(row.Cells[2].Text));
+                cmd2.Parameters.AddWithValue("Plt", System.Web.HttpUtility.HtmlDecode(row.Cells[3].Text));
+                cmd2.Parameters.AddWithValue("Ver", System.Web.HttpUtility.HtmlDecode(row.Cells[4].Text));
                 cmd2.ExecuteNonQuery();
                 Response.Redirect("~/ModerateApps");
 
