@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-
+using OpenQA.Selenium.Support.UI;
 namespace SeleniumTester
 {
     class Program
@@ -19,11 +19,12 @@ namespace SeleniumTester
             string org = "Selenium";
             string plt = "Selenium";
             string ver = "1.0";
-            loginTest(e,p);
-            submitAppTest(e, p, n, dis, org, plt, ver);
-            denyAppTest(e, p, n, dis, org, plt, ver);
-            acceptAppTest(e, p, n, dis, org, plt, ver);
-
+            //loginTest(e,p);
+            //submitAppTest(e, p, n, dis, org, plt, ver);
+            //denyAppTest(e, p, n, dis, org, plt, ver);
+            //acceptAppTest(e, p, n, dis, org, plt, ver);
+            //addComment();
+            removeComment();
         }
 
         static void loginTest(string email, string password)
@@ -200,6 +201,65 @@ namespace SeleniumTester
                     Console.WriteLine("Accept App Test Failed");
                     adminLogin.Close();
                 }
+            }
+        }
+
+        static void addComment()
+        {
+            IWebDriver webDriver = new ChromeDriver();
+            webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
+            webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
+            webDriver.FindElement(By.Id("MainContent_Password")).SendKeys("Test1!");
+            webDriver.FindElement(By.Name("ctl00$MainContent$ctl05")).Click();
+            webDriver.Navigate().GoToUrl("http://localhost:55173/");
+            webDriver.FindElement(By.PartialLinkText("View Comments")).Click();
+            var rating = webDriver.FindElement(By.Id("MainContent_ratingDrop"));
+            var selectElement = new SelectElement(rating);
+            selectElement.SelectByValue("5");
+            webDriver.FindElement(By.Id("MainContent_SubmitComment")).Click();
+            Boolean found = false;
+            try
+            {
+                webDriver.FindElement(By.Id("MainContent_GridView_RemoveButton_0"));
+            }
+            catch (OpenQA.Selenium.NoSuchElementException)
+            {
+                Console.WriteLine("Add Comment Test Failed");
+                webDriver.Close();
+                found = true;
+            }
+            if (!found)
+            {
+                Console.WriteLine("Add Comment Test Successful");
+                webDriver.Close();
+            }
+        }
+
+        static void removeComment()
+        {
+            IWebDriver webDriver = new ChromeDriver();
+            webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
+            webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
+            webDriver.FindElement(By.Id("MainContent_Password")).SendKeys("Test1!");
+            webDriver.FindElement(By.Name("ctl00$MainContent$ctl05")).Click();
+            webDriver.Navigate().GoToUrl("http://localhost:55173/");
+            webDriver.FindElement(By.PartialLinkText("View Comments")).Click();
+            webDriver.FindElement(By.Id("MainContent_GridView_RemoveButton_0")).Click();
+            Boolean found = false;
+            try
+            {
+                webDriver.FindElement(By.Id("MainContent_GridView_RemoveButton_0")).Click();
+            }
+            catch (OpenQA.Selenium.NoSuchElementException)
+            {
+                Console.WriteLine("Remove Comment Test Succesfful");
+                found = true;
+                webDriver.Close();
+            }
+            if (!found)
+            {
+                Console.WriteLine("Remove Comment Test Failed");
+                webDriver.Close();
             }
         }
     }
