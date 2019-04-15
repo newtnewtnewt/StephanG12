@@ -25,6 +25,7 @@ namespace SeleniumTester
             bool t4 = acceptAppTest(e, p, n, dis, org, plt, ver);
             bool t5 = addComment();
             //bool t6 = removeComment();
+            Console.WriteLine("---------------------------------------------------------------\nTest Results:");
             if (t1)
             {
                 Console.WriteLine("Login Test Passed");
