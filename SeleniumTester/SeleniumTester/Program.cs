@@ -19,11 +19,11 @@ namespace SeleniumTester
             string org = "Selenium";
             string plt = "Selenium";
             string ver = "1.0";
-            loginTest(e,p);
-            submitAppTest(e, p, n, dis, org, plt, ver);
-            denyAppTest(e, p, n, dis, org, plt, ver);
-            acceptAppTest(e, p, n, dis, org, plt, ver);
-            addComment();
+            //loginTest(e,p);
+            //submitAppTest(e, p, n, dis, org, plt, ver);
+            //denyAppTest(e, p, n, dis, org, plt, ver);
+            //acceptAppTest(e, p, n, dis, org, plt, ver);
+            //addComment();
             removeComment();
         }
 
@@ -32,24 +32,22 @@ namespace SeleniumTester
             Boolean closed = false;
             IWebDriver webDriver = new ChromeDriver();
             webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
-            webDriver.FindElement(By.Id("MainContent_Email")).SendKeys(email);
-            webDriver.FindElement(By.Id("MainContent_Password")).SendKeys(password);
+            webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("test@test.com");
+            webDriver.FindElement(By.Id("MainContent_Password")).SendKeys("Test1!");
             webDriver.FindElement(By.Name("ctl00$MainContent$ctl05")).Click();
+            Task.Delay(1000).Wait();
             try
             {
-                webDriver.FindElement(By.ClassName("text-danger"));
+                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
             }
             catch (OpenQA.Selenium.NoSuchElementException e)
             {
-                Console.WriteLine("Login Test Succesfful", e);
-                webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
+                Console.WriteLine("Login Test Failed", e);
                 closed = true;
             }
             if (!closed)
             {
-                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
-                Console.WriteLine("Login Test Failed");
+                Console.WriteLine("Login Test Succesfful");
             }
             webDriver.Close();
         }
@@ -83,15 +81,15 @@ namespace SeleniumTester
             catch (OpenQA.Selenium.NoSuchElementException)
             {
                 Console.WriteLine("Submit App Test Failed");
-                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 closed = true;
             }
             if (!closed)
             {
                 adminLogin.FindElement(By.Id("MainContent_GridView_DenyButton_0")).Click();
                 Console.WriteLine("Submit App Test Successful");
-                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
             }
+            webDriver.FindElement(By.PartialLinkText("Log off")).Click();
+            adminLogin.FindElement(By.PartialLinkText("Log off")).Click();
             adminLogin.Close();
             webDriver.Close();
         }
@@ -100,7 +98,7 @@ namespace SeleniumTester
         {
             IWebDriver webDriver = new ChromeDriver();
             webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
-            webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("test@test.com");
+            webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
             webDriver.FindElement(By.Id("MainContent_Password")).SendKeys("Test1!");
             webDriver.FindElement(By.Name("ctl00$MainContent$ctl05")).Click();
             webDriver.Navigate().GoToUrl("http://localhost:55173/SubmitApp");
@@ -142,15 +140,16 @@ namespace SeleniumTester
                 catch (OpenQA.Selenium.NoSuchElementException)
                 {
                     Console.WriteLine("Deny App Test Succesfful");
-                    webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                     present = true;
                 }
                 if (!present)
                 {
                     Console.WriteLine("Deny App Test Failed");
-                    webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 }
             }
+            adminLogin.FindElement(By.PartialLinkText("Log off")).Click();
+            webDriver.FindElement(By.PartialLinkText("Log off")).Click();
+            Task.Delay(1000).Wait();
             adminLogin.Close();
             webDriver.Close();
         }
@@ -201,15 +200,15 @@ namespace SeleniumTester
                 catch (OpenQA.Selenium.NoSuchElementException)
                 {
                     Console.WriteLine("Accept App Test Succesful");
-                    webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                     present = true;
                 }
                 if (!present)
                 {
                     Console.WriteLine("Accept App Test Failed");
-                    webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 }
             }
+            adminLogin.FindElement(By.PartialLinkText("Log off")).Click();
+            webDriver.FindElement(By.PartialLinkText("Log off")).Click();
             webDriver.Close();
             adminLogin.Close();
         }
@@ -242,7 +241,6 @@ namespace SeleniumTester
                 Console.WriteLine("Add Comment Test Successful");
             }
             webDriver.FindElement(By.PartialLinkText("Log off")).Click();
-
             webDriver.Close();
         }
 
@@ -252,8 +250,8 @@ namespace SeleniumTester
             webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
             webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
             webDriver.FindElement(By.Id("MainContent_Password")).SendKeys("Test1!");
-            Task.Delay(1000).Wait();
             webDriver.FindElement(By.Name("ctl00$MainContent$ctl05")).Click();
+            Task.Delay(1000).Wait();
             webDriver.Navigate().GoToUrl("http://localhost:55173/");
             webDriver.FindElement(By.PartialLinkText("View Comments")).Click();
             webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
