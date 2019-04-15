@@ -19,11 +19,11 @@ namespace SeleniumTester
             string org = "Selenium";
             string plt = "Selenium";
             string ver = "1.0";
-            //loginTest(e,p);
-            //submitAppTest(e, p, n, dis, org, plt, ver);
-            //denyAppTest(e, p, n, dis, org, plt, ver);
-            //acceptAppTest(e, p, n, dis, org, plt, ver);
-            //addComment();
+            loginTest(e,p);
+            submitAppTest(e, p, n, dis, org, plt, ver);
+            denyAppTest(e, p, n, dis, org, plt, ver);
+            acceptAppTest(e, p, n, dis, org, plt, ver);
+            addComment();
             removeComment();
         }
 
@@ -42,14 +42,16 @@ namespace SeleniumTester
             catch (OpenQA.Selenium.NoSuchElementException e)
             {
                 Console.WriteLine("Login Test Succesfful", e);
-                webDriver.Close();
+                webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 closed = true;
             }
             if (!closed)
             {
-                webDriver.Close();
+                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 Console.WriteLine("Login Test Failed");
             }
+            webDriver.Close();
         }
 
         static void submitAppTest(string email, string password, string name, string dis, string org, string plt, string ver)
@@ -81,15 +83,17 @@ namespace SeleniumTester
             catch (OpenQA.Selenium.NoSuchElementException)
             {
                 Console.WriteLine("Submit App Test Failed");
-                adminLogin.Close();
+                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 closed = true;
             }
             if (!closed)
             {
                 adminLogin.FindElement(By.Id("MainContent_GridView_DenyButton_0")).Click();
                 Console.WriteLine("Submit App Test Successful");
-                adminLogin.Close();
+                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
             }
+            adminLogin.Close();
+            webDriver.Close();
         }
 
         static void denyAppTest(string email, string password, string name, string dis, string org, string plt, string ver)
@@ -121,6 +125,7 @@ namespace SeleniumTester
             catch (OpenQA.Selenium.NoSuchElementException)
             {
                 Console.WriteLine("Deny App Test failed to submit the app");
+                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 adminLogin.Close();
                 closed = true;
             }
@@ -137,26 +142,29 @@ namespace SeleniumTester
                 catch (OpenQA.Selenium.NoSuchElementException)
                 {
                     Console.WriteLine("Deny App Test Succesfful");
-                    adminLogin.Close();
+                    webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                     present = true;
                 }
                 if (!present)
                 {
                     Console.WriteLine("Deny App Test Failed");
-                    adminLogin.Close();
+                    webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 }
             }
+            adminLogin.Close();
+            webDriver.Close();
         }
 
         static void acceptAppTest(string email, string password, string name, string dis, string org, string plt, string ver)
         {
+            name = "DangerZone";
             IWebDriver webDriver = new ChromeDriver();
             webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
             webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("test@test.com");
             webDriver.FindElement(By.Id("MainContent_Password")).SendKeys("Test1!");
             webDriver.FindElement(By.Name("ctl00$MainContent$ctl05")).Click();
             webDriver.Navigate().GoToUrl("http://localhost:55173/SubmitApp");
-            webDriver.FindElement(By.Id("MainContent_Name")).SendKeys("Cucu");
+            webDriver.FindElement(By.Id("MainContent_Name")).SendKeys(name);
             webDriver.FindElement(By.Id("MainContent_Description")).SendKeys("It");
             webDriver.FindElement(By.Id("MainContent_Organization")).SendKeys("Is For A");
             webDriver.FindElement(By.Id("MainContent_Platform")).SendKeys("Test");
@@ -177,7 +185,7 @@ namespace SeleniumTester
             catch (OpenQA.Selenium.NoSuchElementException)
             {
                 Console.WriteLine("Deny App Test failed to submit the app");
-                adminLogin.Close();
+                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 closed = true;
             }
             if (!closed)
@@ -187,21 +195,23 @@ namespace SeleniumTester
                 Boolean present = false;
                 try
                 {
-                    adminLogin.FindElement(By.PartialLinkText("Cucu"));
+                    adminLogin.FindElement(By.PartialLinkText(name));
 
                 }
                 catch (OpenQA.Selenium.NoSuchElementException)
                 {
                     Console.WriteLine("Accept App Test Succesful");
-                    adminLogin.Close();
+                    webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                     present = true;
                 }
                 if (!present)
                 {
                     Console.WriteLine("Accept App Test Failed");
-                    adminLogin.Close();
+                    webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 }
             }
+            webDriver.Close();
+            adminLogin.Close();
         }
 
         static void addComment()
@@ -225,14 +235,15 @@ namespace SeleniumTester
             catch (OpenQA.Selenium.NoSuchElementException)
             {
                 Console.WriteLine("Add Comment Test Failed");
-                webDriver.Close();
                 found = true;
             }
             if (!found)
             {
                 Console.WriteLine("Add Comment Test Successful");
-                webDriver.Close();
             }
+            webDriver.FindElement(By.PartialLinkText("Log off")).Click();
+
+            webDriver.Close();
         }
 
         static void removeComment()
@@ -241,9 +252,11 @@ namespace SeleniumTester
             webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
             webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
             webDriver.FindElement(By.Id("MainContent_Password")).SendKeys("Test1!");
+            Task.Delay(1000).Wait();
             webDriver.FindElement(By.Name("ctl00$MainContent$ctl05")).Click();
             webDriver.Navigate().GoToUrl("http://localhost:55173/");
             webDriver.FindElement(By.PartialLinkText("View Comments")).Click();
+            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             webDriver.FindElement(By.Id("MainContent_GridView_RemoveButton_0")).Click();
             Boolean found = false;
             try
@@ -254,11 +267,13 @@ namespace SeleniumTester
             {
                 Console.WriteLine("Remove Comment Test Succesfful");
                 found = true;
+                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 webDriver.Close();
             }
             if (!found)
             {
                 Console.WriteLine("Remove Comment Test Failed");
+                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
                 webDriver.Close();
             }
         }
