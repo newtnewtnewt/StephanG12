@@ -24,7 +24,7 @@ namespace SeleniumTester
             bool t3 = denyAppTest(e, p, n, dis, org, plt, ver);
             bool t4 = acceptAppTest(e, p, n, dis, org, plt, ver);
             bool t5 = addComment();
-            //bool t6 = removeComment();
+            bool t6 = removeComment();
             Console.WriteLine("---------------------------------------------------------------\nTest Results:");
             if (t1)
             {
@@ -65,6 +65,14 @@ namespace SeleniumTester
             else
             {
                 Console.WriteLine("Add Comment Test Failed");
+            }
+            if (t6)
+            {
+                Console.WriteLine("Remove Comment Test Passed");
+            }
+            else
+            {
+                Console.WriteLine("Remove Comment Test Failed");
             }
         }
 
@@ -291,6 +299,7 @@ namespace SeleniumTester
                 result = true;
             }
             webDriver.FindElement(By.PartialLinkText("Log off")).Click();
+            Task.Delay(1000).Wait();
             webDriver.Close();
             return result;
         }
@@ -299,33 +308,41 @@ namespace SeleniumTester
         {
             bool result = false;
             IWebDriver webDriver = new ChromeDriver();
-            webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
-            webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
-            webDriver.FindElement(By.Id("MainContent_Password")).SendKeys("Test1!");
-            webDriver.FindElement(By.Name("ctl00$MainContent$ctl05")).Click();
-            Task.Delay(1000).Wait();
-            webDriver.Navigate().GoToUrl("http://localhost:55173/");
-            webDriver.FindElement(By.PartialLinkText("View Comments")).Click();
-            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            webDriver.FindElement(By.Id("MainContent_GridView_RemoveButton_0")).Click();
-            Boolean found = false;
             try
             {
+                webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
+                webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
+                webDriver.FindElement(By.Id("MainContent_Password")).SendKeys("Test1!");
+                webDriver.FindElement(By.Name("ctl00$MainContent$ctl05")).Click();
+                Task.Delay(1000).Wait();
+                webDriver.Navigate().GoToUrl("http://localhost:55173/");
+                webDriver.FindElement(By.PartialLinkText("View Comments")).Click();
+                webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
                 webDriver.FindElement(By.Id("MainContent_GridView_RemoveButton_0")).Click();
-            }
-            catch (OpenQA.Selenium.NoSuchElementException)
-            {
-                found = true;
+                Boolean found = false;
+                try
+                {
+                    webDriver.FindElement(By.Id("MainContent_GridView_RemoveButton_0")).Click();
+                }
+                catch (OpenQA.Selenium.NoSuchElementException)
+                {
+                    found = true;
+                    webDriver.FindElement(By.PartialLinkText("Log off")).Click();
+                    webDriver.Close();
+                    result = true;
+                }
+                if (!found)
+                {
+                    Console.WriteLine("Remove Comment Test Failed");
+
+                }
                 webDriver.FindElement(By.PartialLinkText("Log off")).Click();
-                webDriver.Close();
-                result = true;
             }
-            if (!found)
+            catch
             {
-                Console.WriteLine("Remove Comment Test Failed");
-                webDriver.FindElement(By.PartialLinkText("Log off")).Click();
-                webDriver.Close();
+
             }
+            webDriver.Close();
             return result;
         }
     }
