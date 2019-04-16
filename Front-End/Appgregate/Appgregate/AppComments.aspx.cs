@@ -44,7 +44,7 @@ namespace Appgregate
             SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
 
-            if (txtComment.Text == "Feel Free To Leave a Comment")
+            if (txtComment.Text == "Feel Free To Leave a Comment" || txtComment.Text == "") 
             {
                 if (ratingDrop.SelectedIndex != 0)
                 {
