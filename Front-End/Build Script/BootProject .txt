@@ -1,0 +1,17 @@
+Instructions:
+
+1. Change the following directory after the "cd" to the directory of your copy of MSBuild.exe and execute.
+cd C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin
+
+2. Execute the following line with the directory of the project file substituted
+MSBuild.exe "C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate.sln"
+
+3. As long as you have IIS Express installed, this should run fine, execute the line.
+cd C:\Program Files (x86)\IIS Express
+
+4. Execute this line. This boots up the website of your default browser on the correct port
+start "" http://localhost:55173
+
+5. Executes this line. This runs everything built through MSBuild
+iisexpress /path:C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate /port:55173
+

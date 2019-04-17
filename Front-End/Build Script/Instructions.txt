@@ -1,7 +1,0 @@
-1. Open VS Development Command Prompt 
-
-2. Use the command 
-dotnet build C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\Appgregate.csproj
-
-3. Use the command
-dotnet run C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\Appgregate.csproj
