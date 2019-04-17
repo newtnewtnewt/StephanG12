@@ -1,0 +1,2 @@
+C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Build Script\obj\Debug\Appgregate.csprojAssemblyReference.cache
+C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Build Script\obj\Debug\Appgregate.csproj.CoreCompileInputs.cache

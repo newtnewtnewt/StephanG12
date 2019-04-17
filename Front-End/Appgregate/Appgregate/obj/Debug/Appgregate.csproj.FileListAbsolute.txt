@@ -100,7 +100,6 @@ C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\obj\D
 C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\obj\Debug\Appgregate.csproj.CopyComplete
 C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\obj\Debug\Appgregate.dll
 C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\obj\Debug\Appgregate.pdb
-C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\Appgregate.dll.config
 C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\Appgregate.dll
 C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\Appgregate.pdb
 C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\roslyn\csc.exe
