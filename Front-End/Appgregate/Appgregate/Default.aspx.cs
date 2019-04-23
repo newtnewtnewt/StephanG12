@@ -36,6 +36,7 @@ namespace Appgregate
         {
             SqlDataSource1.SelectParameters.Clear();
             string query = txtSearch.Text;
+            query = query.Replace("'", "''");
             SqlDataSource1.SelectParameters.Add("query", query);
             SqlDataSource1.SelectCommand = "SELECT AppTable.appID, AppTable.Name, AppTable.Description, AppTable.Organization, AppTable.[Platform(s)], AppTable.[Version(s)], " + 
                 "[Rating] = (CASE WHEN AVG(appRating) < 1 OR AVG(appRating) IS NULL  THEN 'N/A' ELSE CONVERT(VARCHAR(5), CAST(AVG(CAST(appRating AS DECIMAL(10, 2))) AS DECIMAL(10, 2))) END) " + 
