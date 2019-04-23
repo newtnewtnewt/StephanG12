@@ -1,4 +1,3 @@
-C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\Appgregate.dll.config
 C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\Appgregate.dll
 C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\Appgregate.pdb
 C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\roslyn\csc.exe

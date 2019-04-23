@@ -11,7 +11,7 @@
   <br />
       <div class="input-btn-toolbar" style="width:100%">  
         <asp:TextBox ID="txtSearch" runat="server" Rows="1" Columns="20" Width="600px" Text="Type and Search!" style="resize:none;vertical-align:middle" />  
-        <asp:Button ID="SubmitComment" style ="vertical-align:middle" CssClass = "Button"  runat="server"   Text="Submit"  OnClick="SubmitButton_Click" />
+        <asp:Button ID="SubmitSearch" style ="vertical-align:middle" CssClass = "Button"  runat="server"   Text="Submit"  OnClick="SubmitButton_Click" />
        </div>
     <br />
     <br />
