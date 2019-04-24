@@ -1,0 +1,95 @@
+﻿Iteration 1 continues and concludes
+* Demonstrate some working application project beyond “Hello World”. Ideally a skeleton/first iteration version of your application since your presentations .
+Done
+* Based on your requirements, devise one UML use case diagram for an “important” use case of your application.
+  
+
+* For that use case, complete a UML sequence diagram
+  
+
+* Explicate your current requirement list and priorities for each. Ensure customer is content with them.
+View/Submit requests for iteration -1 
+Accept/reject requests for iteration-2
+
+
+Requirements: 
+From this point forth, the customer is defined as Mike, the person buying this program.
+The user is a standard, default user who has no special permissions. A person is assigned the role of user by default.
+A moderator is defined as someone with a heightened level of privilege able to remove comments on applications in comment sections.
+An admin is at a higher level of privilege than moderator and is allowed to confirm/deny applications as well as the cascading roles provided.
+* A user/moderator/admin shall be able to download Appgregate
+* A user/moderator/admin shall be able to run the Appgregate without any initial permissions.
+* A user/moderator/admin shall be able to access a login page.
+* A user/moderator/admin shall be able to insert a username and password into two text boxes to login to an account.
+* A user/moderator/admin’s password shall be encrypted within a text file.
+* A user/moderator/admin shall see the app store in the GUI without logging in, in an unsorted order upon booting the program.
+* A user/moderator/admin shall see text in the GUI without logging in  above each respective data entry with the corresponding column name for that data entry(I.E the “Name” will be displayed above the application name in the graphic interface)
+* A user/moderator/admin shall be able to view the name of the application on the GUI without logging in, in the row corresponding to the application.
+* A user/moderator/admin shall be able to view the description of the application on the GUI without logging in, in the row corresponding to the application.
+* A user/moderator/admin shall be able to view the respective organization of the application on the GUI without logging in  in the row corresponding to the application.
+* A user/moderator/admin shall be able to view the platform(s) of the application on the GUI without logging in, in the row corresponding to the application.
+* A user/moderator/admin shall be able to view the versions(s) of the application on the GUI without logging in, in the row corresponding to the application.
+* A user/moderator/admin shall be able to view the out of 5 star rating of the application on the GUI without logging in, in the row corresponding to the application.
+* A user/moderator/admin shall be able to view a “view comments” button on the GUI without logging in, in the row corresponding to the application.
+* A user/moderator/admin shall be able to view the application information in each row in the GUI according to the following order: name, description, organization, platform(s), version(s), out of 5 rating.
+* A user/moderator/admin shall be able to single click on any column header in the GUI to sort that column in ascending order for all columns.
+* A user/moderator/admin shall be able to single click on any column header in the GUI for a list already sorted in ascending order to sort that list by that column in descending order.
+* A user/moderator/admin shall be able to double click any column header in the GUI, without logging in, for a search bar to appear.
+* A user/moderator/admin shall be able to type text on column headers in the GUI, without logging in,  that have been double clicked in order to filter by criteria respective of that column.
+* A user/moderator/admin shall have access in the GUI without login in to a search bar that can be clicked on in order to type words in.
+* A user/moderator/admin shall be able to filter across all columns based on the text present in the persistent search bar.
+* A programmer shall institute a SQL table for storing all application information 
+* A programmer shall institute a SQL table for storing all comments 
+* A programmer shall institute a foreign key in the application information table to link the application information table with the comment table
+* A programmer shall have the GUI populate based on the information stored in the SQL database
+* A programmer shall generate all necessary application components using a J-Swing GUI.
+* Noah will be running front end through .Net instead of JSwing - running front in an actual web service will look better and run faster. 
+* A user/moderator/admin shall be able to click a button to direct them to a submit application page while logged in
+* A user/moderator/admin shall be able to enter information into text boxes on an application page while logged in
+* A user/moderator/admin shall be able to submit an application request while logged in using the information present in the text boxes on the application page
+* A user/moderator/admin shall have a link in their application submission to the specific version of their app to be hosted on the store, while logged in on the application page. (which can be apple store, google play store )
+* A programmer shall store all application requests in a SQL table
+* An admin shall be able to hit a button directed them to an application request accept/deny page while logged in on the GUI
+* An admin shall be able to view all application requests in the order which they were submitted, including all details of the textfield submissions while logged in on the application request page
+* An admin shall be able to click accept and have a box/JSwing pane pop up with a text box for comments as well as a submit button while logged in on the application request page
+* An admin shall be able to leave a comment before hitting the submit button on the box pop up in the accept pane while logged in on the application request page.
+* The programmer shall write a SQL stored procedure that will add any accepted requests to the Application table
+* An admin shall be able to click reject and have a box/JSwing pane pop up with a text box for comments as well as a submit button while logged in on the application request page
+* An admin shall be able to leave a comment before hitting the submit button on the box pop up in the reject pane while logged in on the application request page.
+* The user/moderator/admin shall have an option to hit a button on the main GUI page to redirect towards a comments page while logged in.
+* The user/moderator/admin can view all comments they have posted or received in their comment page while logged in.
+* The user/moderator/admin can return to the home GUI from anywhere through a persistent home button on the bottom left hand part of the screen
+* A user/moderator/admin can hit “view comments” button on any of the application rows in the main GUI in order to be directed to a comments page
+* A user/moderator/admin can view all comments on the comments page without being logged in
+* A user/moderator/admin can fill a textbox with text while viewing a particular application to leave a comment
+* A user/moderator/admin can hit a submit button which will submit a comment based on the text in the textbox.
+* A user/moderator/admin will have a number of stars option under each textbox, corresponding with a comment while logged in on a comment page.
+* A user/moderator/admin will have a choice in stars ranging from 1 to 5 with the option of no rating. 
+* A programmer will store all comments and ratings together in SQL table
+* A moderator/admin shall be able to moderate a comment section (delete comments) for each included app on the comments page while logged in using a small button in the corner of each comment
+* A programmer shall store all user/moderator/admin login information in a SQL table
+
+
+
+
+Do you want any requirements to be changed? Does everything look fine to you? Let us know your priorities. 
+* Show your customer your updated / tracked burn down chart with progress
+Done
+* Every team member must commit something to repository (can be documentation, source code, etc)
+OK
+The weekly deliverable, source code, diagrams in the repo. 
+* Prepare agenda for next 2 meetings.
+Week 5th
+* We will be discussing about the iteration 1 retrospective. 
+* Creating simple unit tests for 2 classes 
+* Iteration 1 product deliverables and updated estimates. 
+* Showing the customer what we have done.
+* Updating them on the progress/ prioritize and pick iteration 2 user stories to be considered. 
+
+
+For the week 6th
+* Iteration 2 continues. 
+* Progress will be shown. 
+* Creating build files and scripts for your project
+* Demonstrating fully functional version control system to the customer.
+* Need to develop, write a test in Test Driven Development.
