@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <ItemGroup>
@@ -5,3 +6,12 @@
   </ItemGroup>
 
 </Project>
+=======
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <ProjectCapability Include="TestContainer" />
+  </ItemGroup>
+
+</Project>
+>>>>>>> 06f199956dd0d2544bc21dd72aa7ee977dab8afd
