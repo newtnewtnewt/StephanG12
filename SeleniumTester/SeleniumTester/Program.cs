@@ -12,6 +12,7 @@ namespace SeleniumTester
     {
         static void Main(string[] args)
         {
+            IWebDriver webDriver = new ChromeDriver();
             string e = "test@test.com"; // The Default Email
             string p = "Test1!"; // The Default password
             string n = "Selenium"; // The Default App Name
@@ -19,12 +20,12 @@ namespace SeleniumTester
             string org = "Selenium";
             string plt = "Selenium";
             string ver = "1.0";
-            bool t1 = loginTest(e, p);
-            bool t2 = submitAppTest(n, dis, org, plt, ver);
-            bool t3 = denyAppTest(n, dis, org, plt, ver);
-            bool t4 = acceptAppTest(n, dis, org, plt, ver);
-            bool t5 = addComment();
-            bool t6 = removeComment();
+            bool t1 = loginTest(webDriver, e, p);
+            bool t2 = submitAppTest(webDriver, n, dis, org, plt, ver);
+            bool t3 = denyAppTest(webDriver, n, dis, org, plt, ver);
+            bool t4 = acceptAppTest(webDriver, n, dis, org, plt, ver);
+            bool t5 = addComment(webDriver);
+            bool t6 = removeComment(webDriver);
             Console.WriteLine("---------------------------------------------------------------\nTest Results:");
             if (t1)
             {
@@ -76,11 +77,10 @@ namespace SeleniumTester
             }
         }
 
-        static bool loginTest(string email, string password)
+        static bool loginTest(IWebDriver webDriver, string email, string password)
         {
             bool result = false;
             Boolean closed = false;
-            IWebDriver webDriver = new ChromeDriver();
             try
             {
                 webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
@@ -106,14 +106,12 @@ namespace SeleniumTester
             {
 
             }
-            webDriver.Close();
             return result;
         }
 
-        static bool submitAppTest(string name, string dis, string org, string plt, string ver)
+        static bool submitAppTest(IWebDriver webDriver, string name, string dis, string org, string plt, string ver)
         {
             bool result = false;
-            IWebDriver webDriver = new ChromeDriver();
             try
             {
                 webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
@@ -127,7 +125,6 @@ namespace SeleniumTester
                 webDriver.FindElement(By.Id("MainContent_Platform")).SendKeys(plt);
                 webDriver.FindElement(By.Id("MainContent_Version")).SendKeys(ver);
                 webDriver.FindElement(By.Id("MainContent_SubmitButton")).Click();
-
                 IWebDriver adminLogin = new ChromeDriver();
                 adminLogin.Navigate().GoToUrl("http://localhost:55173/Account/Login");
                 adminLogin.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
@@ -154,14 +151,12 @@ namespace SeleniumTester
                 adminLogin.Close();
             }
             catch { }
-            webDriver.Close();
             return result;
         }
 
-        static bool denyAppTest(string name, string dis, string org, string plt, string ver)
+        static bool denyAppTest(IWebDriver webDriver, string name, string dis, string org, string plt, string ver)
         {
             bool result = false;
-            IWebDriver webDriver = new ChromeDriver();
             try
             {
                 webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
@@ -175,7 +170,6 @@ namespace SeleniumTester
                 webDriver.FindElement(By.Id("MainContent_Platform")).SendKeys(plt);
                 webDriver.FindElement(By.Id("MainContent_Version")).SendKeys(ver);
                 webDriver.FindElement(By.Id("MainContent_SubmitButton")).Click();
-
                 IWebDriver adminLogin = new ChromeDriver();
                 adminLogin.Navigate().GoToUrl("http://localhost:55173/Account/Login");
                 adminLogin.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
@@ -220,15 +214,13 @@ namespace SeleniumTester
                 adminLogin.Close();
             }
             catch { }
-            webDriver.Close();
             return result;
         }
 
-        static bool acceptAppTest(string name, string dis, string org, string plt, string ver)
+        static bool acceptAppTest(IWebDriver webDriver, string name, string dis, string org, string plt, string ver)
         {
             bool result = false;
             name = "DangerZone";
-            IWebDriver webDriver = new ChromeDriver();
             try
             {
                 webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
@@ -242,7 +234,6 @@ namespace SeleniumTester
                 webDriver.FindElement(By.Id("MainContent_Platform")).SendKeys("Test");
                 webDriver.FindElement(By.Id("MainContent_Version")).SendKeys(ver);
                 webDriver.FindElement(By.Id("MainContent_SubmitButton")).Click();
-
                 IWebDriver adminLogin = new ChromeDriver();
                 adminLogin.Navigate().GoToUrl("http://localhost:55173/Account/Login");
                 adminLogin.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
@@ -285,18 +276,16 @@ namespace SeleniumTester
                 adminLogin.Close();
             }
             catch { }
-            webDriver.Close();
             return result;
         }
 
-        static bool addComment()
+        static bool addComment(IWebDriver webDriver)
         {
             bool result = false;
-            IWebDriver webDriver = new ChromeDriver();
             try
             {
                 webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
-                webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
+                webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("testMod@test.com");
                 webDriver.FindElement(By.Id("MainContent_Password")).SendKeys("Test1!");
                 webDriver.FindElement(By.Name("ctl00$MainContent$ctl05")).Click();
                 webDriver.Navigate().GoToUrl("http://localhost:55173/");
@@ -323,24 +312,20 @@ namespace SeleniumTester
                 Task.Delay(1000).Wait();
             }
             catch { }
-            webDriver.Close();
             return result;
         }
 
-        static bool removeComment()
+        static bool removeComment(IWebDriver webDriver)
         {
             bool result = false;
-            IWebDriver webDriver = new ChromeDriver();
             try
             {
                 webDriver.Navigate().GoToUrl("http://localhost:55173/Account/Login");
                 webDriver.FindElement(By.Id("MainContent_Email")).SendKeys("testAdmin@test.com");
                 webDriver.FindElement(By.Id("MainContent_Password")).SendKeys("Test1!");
                 webDriver.FindElement(By.Name("ctl00$MainContent$ctl05")).Click();
-                Task.Delay(1000).Wait();
                 webDriver.Navigate().GoToUrl("http://localhost:55173/");
                 webDriver.FindElement(By.PartialLinkText("View Comments")).Click();
-                webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
                 webDriver.FindElement(By.Id("MainContent_GridView_RemoveButton_0")).Click();
                 Boolean found = false;
                 try
@@ -365,7 +350,6 @@ namespace SeleniumTester
             {
 
             }
-            webDriver.Close();
             return result;
         }
     }
