@@ -13,9 +13,9 @@ namespace Appgregate
 {
     public partial class AppComments : Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public Boolean Page_Load(object sender, EventArgs e)
         {
-
+            return true;
         }
         protected void DenyButton_Click(object sender, EventArgs e)
         {

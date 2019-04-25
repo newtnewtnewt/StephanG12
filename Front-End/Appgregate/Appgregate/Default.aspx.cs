@@ -12,9 +12,9 @@ namespace Appgregate
 {
     public partial class _Default : Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public Boolean Page_Load(object sender, EventArgs e)
         {
-
+            return true;
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {

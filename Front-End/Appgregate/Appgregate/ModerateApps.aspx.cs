@@ -13,9 +13,9 @@ namespace Appgregate
 {
     public partial class ModerateApps : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public Boolean Page_Load(object sender, EventArgs e)
         {
-
+            return true;
         }
         protected void AcceptButton_Click(object sender, EventArgs e)
         {
