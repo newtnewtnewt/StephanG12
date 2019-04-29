@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 NUnit 3.0 is based on earlier versions of NUnit, with Portions
 
 Copyright (c) 2002-2014 Charlie Poole or 
 Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov or 
 Copyright (c) 2000-2002 Philip A. Craig
-=======
-NUnit 3.0 is based on earlier versions of NUnit, with Portions
-
-Copyright (c) 2002-2014 Charlie Poole or 
-Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov or 
-Copyright (c) 2000-2002 Philip A. Craig
->>>>>>> 06f199956dd0d2544bc21dd72aa7ee977dab8afd
