@@ -1,0 +1,70 @@
+
+Iteration 1 concludes. Iteration 2 Begins!
+
+
+*   Perform and document (and share with customer) your iteration 1 retrospective.
+    *   What went well**? We were able to finish all our tasks, we all are great at conversation and we turn out to be really productive with our work**
+    *   What can be improved? **We need to get on track with our personal meetings. Due to sickness and due to spring break the schedule was changed. So we need to work on that, by taking proper care of ourselves.**
+    *   What are some challenges? How do we address them?
+
+        **Some challenges are time limitations and so we had to push some requirements to iteration - 2. That happened because of the break and sickness but it’s being considered and we are working on it. **
+
+*   Have your testers (or whole group) create simple unit tests for 2 classes
+    *   Test at least every method
+    *   If you’re using Java, use Junit (built into Eclipse)
+
+        **We will be using Selenium as a tester as we are using SQL and ASP.Net**
+
+    *   If you’re using Ruby or other technology, have a test suite that accomplishes unit-level testing (simple method tests with mock objects)
+*   Iteration 1 product deliverables and/or updated estimates
+
+    **We are done with view/submit requests is done**
+
+
+    **We are done with accept/reject requests is done**
+
+
+    **Done with add/remove comments - moderator/admins is done **
+
+*   Show your customer what you have done.
+    *   Update them on your progress/burn down. Work with them to prioritize and pick Iteration 2 user stories to be considered.
+
+        **The two user stories we will be considering will be add/remove comments. **
+
+*   Don't forget your agendas for next 2 meetings!
+
+**For the week 6th**
+
+
+
+*   Iteration 2 continues. 
+*   Progress will be shown. 
+*   Creating build files and scripts for your project
+*   Demonstrating fully functional version control system to the customer.
+*   Need to develop, write a test in Test Driven Development. 
+
+**For the week 7th**
+
+*   Presenting the  proposed testing plan to the customer. 
+
+    It must include: 
+
+*   list of all unit tests you plan on performing. 
+*    your integration tests (integrating two components at a time)
+*   your system tests. 
+*   Who will be doing white box, grey box, and black box testing? How?  
+
+        Create at least 10 test cases. However, more are better. You will have to implement the tests eventually, but for now just describe them. Include at least
+
+        3 White Box (End user) tests
+
+        3 Grey Box Tests
+
+        3 Black Box Tests
+
+*   Allow the customer to run/test the build scripts
+*   **Being the second last customer meeting, customer will tell the final feature list they require by the time of your last customer meeting. **
+*   Show the customer your documentation plan and initial documentation. 
+*   Showing the customer the completed iteration 2 for approvals. 
+
+<!-- Docs to Markdown version 1.0β17 -->
