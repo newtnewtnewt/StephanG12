@@ -1,0 +1,83 @@
+<!----- Conversion time: 1.299 seconds.
+
+
+Using this Markdown file:
+
+1. Cut and paste this output into your source file.
+2. See the notes and action items below regarding this conversion run.
+3. Check the rendered output (headings, lists, code blocks, tables) for proper
+   formatting and use a linkchecker before you publish this page.
+
+Conversion notes:
+
+* Docs to Markdown version 1.0β17
+* Sat May 04 2019 12:36:11 GMT-0700 (PDT)
+* Source doc: https://docs.google.com/a/miamioh.edu/open?id=1mGvr7pVVy5Rs3Jc7pAnW_f4n29OmzG2WsbLsQ8w9VsE
+* This document has images: check for >>>>>  gd2md-html alert:  inline image link in generated source and store images to your server.
+----->
+
+
+<p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 0; ALERTS: 1.</p>
+<ul style="color: red; font-weight: bold"><li>See top comment block for details on ERRORs and WARNINGs. <li>In the converted Markdown or HTML, search for inline alerts that start with >>>>>  gd2md-html alert:  for specific instances that need correction.</ul>
+
+<p style="color: red; font-weight: bold">Links to alert messages:</p><a href="#gdcalert1">alert1</a>
+
+<p style="color: red; font-weight: bold">>>>>> PLEASE check and correct alert issues and delete this message and the inline alerts.<hr></p>
+
+
+
+
+*   Have a running program, optionally with skeleton/dummy objects.
+*   Noah got the front-end done for iteration 1 and Craig is working on back end. 
+*   Identify and mark clearly on task board tasks for iteration 1
+    *   **Assign effort value to each task (hours?) - DONE trello**
+    *   Assign every iteration one task to a person
+
+        **Noah - front-end for iteration 1 (on repository)**
+
+
+        **Craig - backend for iteration 1(it’s in progress)**
+
+
+        **Keegan - trello updating the requirements , **
+
+
+        **Sara - state diagram for one class**
+
+
+        **Pushti - burn-down chart. **
+
+*   Clearly identify which requirements will not be worked on in iteration 1
+
+    We are not going to handle comment section on the app add submit remove comments. 
+
+
+    We are not dealing with the requirements we submitted  previous week talking about different roles of user/ moderator/ admin. 
+
+*   Create a burn-down chart
+*   Pick one important class to create a state diagram for. Complete it.
+    *   
+
+<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/3rd-week0.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/3rd-week0.png "image_tooltip")
+
+*   Setup (SVN, GitHub?) repository. We'll be teaching SVN later. - DONE
+*   Prepare agenda for next 2 meetings (this one and the next) 
+*   Start developing and tracking your progress!
+
+**Next week agenda**
+
+We will have a skeleton /first iteration version of application. 
+
+Based on the requirements one UML use case diagram for an ‘important’ use case of the application will be created. 
+
+And for that UML sequence diagram will also be completed. 
+
+Making sure with the customer about the requirements and the content. 
+
+Tracked burndown chart will be created and shown.
+
+
+<!-- Docs to Markdown version 1.0β17 -->
