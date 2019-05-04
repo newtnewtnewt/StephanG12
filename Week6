@@ -1,0 +1,56 @@
+
+
+Iteration 2 continues
+
+*   Show your customer your progress. 
+
+    **Burndown chart.**
+
+*   Create build files and scripts for your project.  
+
+    **Noah built a batch file using MSBuild, and IIS-EXPRESS**
+
+    *   For
+        *   Those using Java, create an ANT build scripts that will build, run, and clean your project. You can use/test it in Eclipse!
+        *   Others, write a script (windows or Unix) that allows your project to be built, ran, deployed on the server, or some other aspect of setup. 
+    *   Include documentation on how to run your build scripts. 
+*   Demonstrate your fully functional version control system to your customer. 
+
+**We will be showing you GIT**
+
+
+*   GIT or SVN?
+    *   Every member of the group must have checked in something. 
+    *   Demonstrate the main trunk of work to the customer and any branches. 
+*   For a feature you have yet to develop, write a Test for it first as described in [Test Driven Development](https://miamioh.instructure.com/courses/89448/files/11815341/download?wrap=1)
+
+. Demonstrate it to the customer. Run the test showing that it is "Red"
+    *   For Java users, create a JUNIT test before developing the code.
+    *   For others, write a test suite that covers your new feature. 
+
+        **Selenium for ASP.NET**
+
+*   Don't forget your agendas for next 2 meetings!
+
+**Iteration 3 Week 7th**
+
+*   **Present Testing plan to the customer. They will evaluate the plan and must agree/sign off on what they need.**
+
+    **	It will include list of all unit tests plan **
+
+
+    **All integration tests, system tests. **
+
+
+    **How and who will do the white box,grey box and black box. **
+
+
+    **3 white box test, 3 grey box, 3 black box test**
+
+*   **Customer will run test/build script. And will evaluate on it.**
+*   **This will be the second last meeting.**
+*   **Customer will tell his the final feature list the require by the time. **
+*   **Showing the documentation**
+*   **Showing iteration 2 completed features**
+
+<!-- Docs to Markdown version 1.0β17 -->
