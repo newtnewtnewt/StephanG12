@@ -1,0 +1,83 @@
+Documentation for User/in application:
+A user can download Appgregate. 
+A user can run the Appgregate without any initial permissions.
+A user can access a login page.
+A user can  insert a username and password into two text boxes to login to an account.
+A user’s password will be encrypted within a text file.
+A user can see the app store in the GUI without logging in, in an unsorted order upon booting the program.
+A user can  see text in the GUI without logging in  above each respective data entry with the corresponding column name for that data entry(I.E the “Name” will be displayed above the application name in the graphic interface)
+A user can view the name of the application on the GUI without logging in, in the row corresponding to the application.
+A user can view the description of the application on the GUI without logging in, in the row corresponding to the application.
+A user can view the respective organization of the application on the GUI without logging in  in the row corresponding to the application.
+A user can view the platform(s) of the application on the GUI without logging in, in the row corresponding to the application.
+A user can view the versions(s) of the application on the GUI without logging in, in the row corresponding to the application.
+A user can view the out of 5 star rating of the application on the GUI without logging in, in the row corresponding to the application.
+A user can view a “view comments” button on the GUI without logging in, in the row corresponding to the application.
+A user can view the application information in each row in the GUI according to the following order: name, description, organization, platform(s), version(s), out of 5 rating.
+A user can single click on any column header in the GUI to sort that column in ascending order for all columns.
+A user can single click on any column header in the GUI for a list already sorted in ascending order to sort that list by that column in descending order.
+A user can double click any column header in the GUI, without logging in, for a search bar to appear.
+A user can type text on column headers in the GUI, without logging in,  that have been double clicked in order to filter by criteria respective of that column.
+A user will have access in the GUI without login in to a search bar that can be clicked on in order to type words in.
+A user can filter across all columns based on the text present in the persistent search bar.
+In application documentation
+
+Logging in: 
+From the home page, click “Log in”
+From the log in page, enter in your email and password, and hit submit
+You will be redirected to the home page logged in
+
+Registering:
+From the home page, click “register”
+From the register page, enter in an email, password, and confirm the password.
+You will be redirected to the home page logged in
+
+Viewing Apps:
+From the home page, all the apps will be listed
+
+Sorting Apps:
+From the home page, click the criteria you want to sort (Name, Description, Organization, Platforms, Versions, or Ratings)
+The application list will return sorted to the criteria you selected
+
+Searching Apps:
+From the home page, enter in a keyword you want to search for
+The app list will update based on the keyword entered
+
+Viewing Comments:
+From the homepage, find an app you want to view comments for
+On that apps row, click the “View Comments” button
+You will be redirected to the comments for that app
+
+Adding Comments:
+From the home page, while logged in, find an app you want to add a comment for
+On that apps row, click the “View Comments” button
+You will be redirected to the comments for that app
+In the textbox provided, add your comment
+OPTIONAL, Next to the text box, select a rating you want to give the app
+Hit submit, and the comment will be added
+
+Rating Apps:
+From the home page, while logged in, find an app you want to add a comment for
+On that apps row, click the “View Comments” button
+You will be redirected to the comments for that app
+Next to the text box, select a rating you want to give the app
+OPTIONAL, in the text box, add a comment for the app
+Hit submit, and the rating will be added
+
+Deleting Comments(Moderator or Admin only): 
+From the homepage, find an app you want to view comments for
+On that apps row, click the “View Comments” button
+You will be redirected to the comments for that app
+Select the comment you wish to delete, and press “Remove”
+The comment section will update without that comment
+
+Submitting App Requests:
+From the home page, select “Submit App Request”
+Fill out the text boxes with the information for you app
+Once submitted, an Admin will process your request
+
+Accepting/Rejecting App Request(Moderator or Admin only):
+From the home page, select “Accept/Reject App Request”
+From the app requests page, find the app you want to accept or reject
+In that apps row, click “Accept” or “Reject” 
+You will be redirected to the homepage, with the app in the list if accepted or not if rejected
