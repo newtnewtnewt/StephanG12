@@ -40,6 +40,11 @@
 
 
     </asp:GridView>
+
+    <br />
+
+    <img src ="https://lh5.googleusercontent.com/t79_4O5aUVyW-QbfDe4Zy-YjmYklc-Jpxb4Y6XqdgHkASrEBeEl8k064jhznivU810Bep2pshvscy-l0p0OFNkabulsGfGvMzivHj7aO" />
+
     <%--this provides the items in the GridView from the SQL database --%>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand=
      "SELECT AppTable.appID, AppTable.Name, AppTable.Description, AppTable.Organization, AppTable.[Platform(s)], AppTable.[Version(s)], [Rating] = (CASE WHEN AVG(appRating) < 1 OR AVG(appRating) IS NULL --OR appRating is NULL

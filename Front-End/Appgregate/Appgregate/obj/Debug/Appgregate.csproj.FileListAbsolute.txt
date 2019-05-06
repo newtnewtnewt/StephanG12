@@ -309,3 +309,10 @@ C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgreg
 C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\nunit.framework.dll
 C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\nunit.framework.pdb
 C:\Users\newtn\OneDrive\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\nunit.framework.xml
+C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\NUnit3.TestAdapter.dll
+C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\NUnit3.TestAdapter.pdb
+C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\nunit.engine.dll
+C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\nunit.engine.api.dll
+C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\nunit.framework.dll
+C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\nunit.framework.pdb
+C:\Users\newtn\Documents\GitHub\StephanG12\Front-End\Appgregate\Appgregate\bin\nunit.framework.xml
